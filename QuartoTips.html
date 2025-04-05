@@ -1,0 +1,315 @@
+<h3>Render self-contained HTML in single file</h3>
+<pre><code>format:
+  html:
+    embed-resources: true</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/output-formats/html-publishing.html#standalone-html">https://quarto.org/docs/output-formats/html-publishing.html#standalone-html</a></p>
+<h3>HTML with table of contents on the left, depth 4</h3>
+<pre><code>format: 
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 4
+    toc-location: left</code></pre>
+<h3>Add alt text to an image</h3>
+<pre><code>![](image.png){fig-alt="My alt text"}</code></pre>
+<h3>Add a div the quarto way</h3>
+<pre><code>::: {.class}
+Content to be modified by the class
+:::</code></pre>
+<p class="source">Source: <a href="
+https://github.com/jthomasmock/quarto-reporting
+https://youtu.be/hbf7Ai3jnxY?t=1073">
+https://github.com/jthomasmock/quarto-reporting
+https://youtu.be/hbf7Ai3jnxY?t=1073</a></p>
+<h3>Add a span the quarto way</h3>
+<pre><code>Regular text and [spanned text]{.class} and regular again. Span can also be [another kind of class]{class-name}.</code></pre>
+<h3>Add tabs</h3>
+<pre><code>::: {.panel-tabset}
+## Tab 1
+Content in Tab 1
+
+## Tab 2
+Content in Tab 2
+:::</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/interactive/layout.html#tabset-panel">https://quarto.org/docs/interactive/layout.html#tabset-panel</a></p>
+<h3>Include html files in doc head or body</h3>
+<pre><code>format:
+  html:
+    include-in-header:
+      - analytics1.html
+      - second_file.html
+    include-before-body: analytics2.html</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/output-formats/html-basics.html#includes">https://quarto.org/docs/output-formats/html-basics.html#includes</a></p>
+<h3>Lay out 2 row of images side by side </h3>
+<pre><code>::: {layout-ncol=2}
+![](image.png){fig-alt="Description of image 1"}
+![](image2.png){fig-alt="Description of image 1"}
+:::</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/interactive/layout.html#tabset-panell">https://quarto.org/docs/interactive/layout.html#tabset-panell</a></p>
+<h3>Include rendered Observable value in text string in an ojs code chunk</h3>
+<pre><code>md`My text ${my_variable}` </code></pre>
+<h3>Include white space between images laid out side by side in row 1 then full-width image in row 2</h3>
+<pre><code>::: {layout="[[40,-20,40], [100]]"}
+![](image1.png)
+![](image2.png)
+![](image3.png)
+:::</code></pre>
+<p class="source">Source: <a href="https://twitter.com/sharon000/status/1557057677481721856?s=20&t=JTSl10u5b3wDNGlDdoosbw">https://twitter.com/sharon000/status/1557057677481721856?s=20&t=JTSl10u5b3wDNGlDdoosbw</a></p>
+<h3>{quartostamp} RStudio add-in for inserting div or class</h3>
+<pre><code>remotes::install_github("matt-dray/quartostamp")</code></pre>
+<p class="source">Source: <a href="https://matt-dray.github.io/quartostamp/">https://matt-dray.github.io/quartostamp/</a></p>
+<h3>Background image in title slide</h3>
+<pre><code>title-slide-attributes:
+    data-background-image: "/path/to/image"
+    data-background-size: contain
+    data-background-opacity: "number"</code></pre>
+<p class="source">Source: <a href="https://stackoverflow.com/questions/72884987/custom-background-in-title-slide-using-quartos-reveal-implementation">https://stackoverflow.com/questions/72884987/custom-background-in-title-slide-using-quartos-reveal-implementation</a></p>
+<h3>Use another built-in Quarto theme</h3>
+<pre><code>format:
+  html:
+    theme: litera</code></pre>
+<h3>R-Ladies xaringan theme now on Quarto</h3>
+<pre><code>quarto install extension beatrizmilz/quarto-rladies-theme
+quarto use template beatrizmilz/quarto-rladies-theme
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: dark
+---</code></pre>
+<p class="source">Source: <a href="https://github.com/beatrizmilz/quarto-rladies-theme">https://github.com/beatrizmilz/quarto-rladies-theme</a></p>
+<h3>Add custom CSS (not .scss) file</h3>
+<pre><code>Add /*-- scss:defaults --*/ to css and theme: [default, custom.css] to yaml</code></pre>
+<p class="source">Source: <a href="https://twitter.com/thomas_mock/status/1553910705014931456?s=20&t=F5cXeh3VWXFqD34BcsvcGw">https://twitter.com/thomas_mock/status/1553910705014931456?s=20&t=F5cXeh3VWXFqD34BcsvcGw</a></p>
+<h3>Allow users to toggle between light and dark, and change options for how code keywords are highlighted with built-in styles and themes</h3>
+<pre><code>format: 
+  html:
+    highlight-style: arrow
+    theme:
+      light: flatly
+      dark: darkly</code></pre>
+<h3>Add links to code function documentation with downlit library</h3>
+<pre><code>format:
+  html:
+    code-link: true</code></pre>
+<h3>Add lightbox to Quarto - needs lightbox extension https://github.com/quarto-ext/lightbox</h3>
+<pre><code>---
+...
+filters:
+   - lightbox
+lightbox: auto
+---</code></pre>
+<p class="source">Source: <a href="https://twitter.com/yutannihilat_en/status/1554835221232594944?s=20&t=cLNZANm4qL2T6XZ51kE1qQ">https://twitter.com/yutannihilat_en/status/1554835221232594944?s=20&t=cLNZANm4qL2T6XZ51kE1qQ</a></p>
+<h3>Add outline title to a title-less slide</h3>
+<pre><code>{#slide3-id data-menu-title="My slide 3 title for outline"}</code></pre>
+<p class="source">Source: <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/23-titleless-slides/">https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/23-titleless-slides/</a></p>
+<h3>Include font awesome icons</h3>
+<pre><code>quarto install extension quarto-ext/fontawesome
+{{< fa the-icon-name >}}</code></pre>
+<p class="source">Source: <a href="https://github.com/quarto-ext/fontawesome">https://github.com/quarto-ext/fontawesome</a></p>
+<h3>Include Lordicon icons</h3>
+<pre><code>quarto install extension jmgirard/lordicon
+{{< li wlpxtupd >}}</code></pre>
+<p class="source">Source: <a href="https://github.com/jmgirard/lordicon">https://github.com/jmgirard/lordicon</a></p>
+<h3>Use quarto for parameterized reports, including parameterized SQL</h3>
+<pre><code># In YAML parent level:
+params: 
+  myparam1: "NA"
+  myparam2: "NA"
+# access in R with
+params$myparam1, params$myparam2
+see blog post for SQL example</code></pre>
+<p class="source">Source: <a href="https://www.mm218.dev/posts/2022-08-04-how-to-use-quarto-for-parameterized-reporting/">https://www.mm218.dev/posts/2022-08-04-how-to-use-quarto-for-parameterized-reporting/</a></p>
+<h3>Hide all code display for reports to general users</h3>
+<pre><code>format: html
+execute:
+  echo: false</code></pre>
+<h3>Let users show and hide code including custom label </h3>
+<pre><code>format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/output-formats/html-code.html#folding-code">https://quarto.org/docs/output-formats/html-code.html#folding-code</a></p>
+<h3>Let users see full document source code,optional including specifying URL for the source code instead of the doc</h3>
+<pre><code>format:
+  html: 
+    code-tools:
+      source: https://github.com/quarto-dev/quarto-web/blob/main/index.md</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/output-formats/html-code.html#code-tools">https://quarto.org/docs/output-formats/html-code.html#code-tools</a></p>
+<h3>Use reference Word doc for style</h3>
+<pre><code># create template - run in TERMINAL
+$ quarto pandoc -o custom-reference-doc.docx \
+   --print-default-data-file reference.docx
+# use template - add to parent-level YAML
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/output-formats/ms-word-templates.html#using-templates">https://quarto.org/docs/output-formats/ms-word-templates.html#using-templates</a></p>
+<h3>Import Observable notebook into a quarto doc</h3>
+<pre><code>import {viewof data} from "@observablehq/summary-table"
+viewof data
+import {viewof summary_data} from "@observablehq/summary-table"
+viewof summary_data</code></pre>
+<p class="source">Source: <a href="https://timelyportfolio.github.io/quarto_tests/examples/quarto_observable_imports/quarto_observable_imports.html">https://timelyportfolio.github.io/quarto_tests/examples/quarto_observable_imports/quarto_observable_imports.html</a></p>
+<h3>Import Observable notebook into a quarto doc: sample .qmd</h3>
+<pre><code>nan</code></pre>
+<p class="source">Source: <a href="https://github.com/timelyportfolio/quarto_tests/blob/main/examples/quarto_observable_imports/quarto_observable_imports.qmd">https://github.com/timelyportfolio/quarto_tests/blob/main/examples/quarto_observable_imports/quarto_observable_imports.qmd</a></p>
+<h3>Create columns of 40% wide and 60% wide</h3>
+<pre><code>:::: {.columns}
+::: {.column width="40%"}
+content in 1st column
+:::
+
+::: {.column width="60%"}
+contents in 2nd column
+:::
+::::</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/powerpoint.html#multiple-columns">https://quarto.org/docs/presentations/powerpoint.html#multiple-columns</a></p>
+<h3>Increase width of item in a div</h3>
+<pre><code>:::{.column-page} # or .column-screen for full bleed
+contents here
+:::</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/authoring/article-layout.html">https://quarto.org/docs/authoring/article-layout.html</a></p>
+<h3>Increase width of entire page in YAML</h3>
+<pre><code>format:
+  html:
+    page-layout: full</code></pre>
+<h3>Page width options for page-layout in YAML</h3>
+<pre><code>article #default optimized for reading 60-900px
+full # wider because it uses sidebar and margin regions
+ </code></pre>
+<h3>Include child files</h3>
+<pre><code>{{< include content.qmd >}}</code></pre>
+<p class="source">Source: <a href="https://twitter.com/PipingHotData/status/1565354597656690697?s=20&t=sPRrCEwCHXn2T268_wE7Qg">https://twitter.com/PipingHotData/status/1565354597656690697?s=20&t=sPRrCEwCHXn2T268_wE7Qg</a></p>
+<h3>Create nice PDF title pages</h3>
+<pre><code>Quarto titlepages extension</code></pre>
+<p class="source">Source: <a href="https://nmfs-opensci.github.io/quarto_titlepages/">https://nmfs-opensci.github.io/quarto_titlepages/</a></p>
+<h3>Show all your code including the backticks</h3>
+<pre><code>#| echo: fenced</code></pre>
+<h3>Have text fade in or out in a slide presentation</h3>
+<pre><code>The following text [fades in]{.fragment}</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments">https://quarto.org/docs/presentations/revealjs/advanced.html#fragments</a></p>
+<h3>Add an inline footnote</h3>
+<pre><code>This is text you see^[This is either a linked footnote or with HTML hoverable but not viewable without user action] and now we're back to regular text.</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes">https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes</a></p>
+<h3>Zoom in on an area of screen during reveal.js presentation</h3>
+<pre><code>alt-click on area of screen</code></pre>
+<p class="source">Source: <a href="https://youtu.be/hbf7Ai3jnxY?t=2904">https://youtu.be/hbf7Ai3jnxY?t=2904</a></p>
+<h3>Absolute potiion of elements, for ex 25 px from bottom and 100 px from left and image width 150</h3>
+<pre><code>::: {.absolute .fragment bottom="25" left="100"}
+![](image.png){width="150" fig-alt="my alt text"}
+:::</code></pre>
+<h3>Format numbers in Observable JavaScript</h3>
+<pre><code>d3.format(",")(d.ColumnName) // adds comma to number</code></pre>
+<p class="source">Source: <a href="https://observablehq.com/@d3/d3-format">https://observablehq.com/@d3/d3-format</a></p>
+<h3>Generate raw markdown programmatically with asis</h3>
+<pre><code>```{r}
+#| echo: false
+#| output: asis
+
+cat("# Heading 1\n")
+cat("## Heading 2\n")
+```</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/computations/execution-options.html#raw-output">https://quarto.org/docs/computations/execution-options.html#raw-output</a></p>
+<h3>Generate tabsets programmatically</h3>
+<pre><code># See StackOverflow for full code and explainer
+::: {.panel-tabset}
+```{r}
+#| results: asis
+iwalk(plots, ~ {
+  cat('## ', .y, '\n\n')  
+  print(.x) 
+  cat('\n\n')  
+})
+
+```
+
+:::</code></pre>
+<p class="source">Source: <a href="https://stackoverflow.com/questions/73367433/how-to-programmatically-generate-tabset-panel-in-quarto">https://stackoverflow.com/questions/73367433/how-to-programmatically-generate-tabset-panel-in-quarto</a></p>
+<h3>Auutomatically show code on left and result on right after click in a slide presentation</h3>
+<pre><code>#| output-location: column-fragment</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/revealjs/#output-location">https://quarto.org/docs/presentations/revealjs/#output-location</a></p>
+<h3>Show an external website within (on top of) a slide during a presentation so you don't have to switch to a new browser tab</h3>
+<pre><code>//In YAML:
+format:
+  revealjs:
+    preview-links: auto
+//For 1 link
+[My text](https://example.com){preview-link="true"}</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links">https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links</a></p>
+<h3>Add tooltips to an Observable JavaScript Plot dataviz</h3>
+<pre><code>// Example:
+Plot.plot({
+  marks: [Plot.dot(data, {
+      x: "bill_length", y: "bill_depth", title: (d) =>
+        `${d.island} \n bill depth: ${d.bill_depth} \n bill length: ${d.bill_length}` // \n makes a new line
+    })],
+  tooltip: {fill: "red", stroke: "blue", r: 8}
+})</code></pre>
+<p class="source">Source: <a href="https://observablehq.com/@mkfreeman/plot-tooltip">https://observablehq.com/@mkfreeman/plot-tooltip</a></p>
+<h3>Add speaker notes to a slide</h3>
+<pre><code>Your slide content
+
+::: {.notes}
+Your speaker notes
+:::</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view</a></p>
+<h3>Display speakers notes and slides in synchronized separate windows</h3>
+<pre><code>nan</code></pre>
+<p class="source">Source: <a href="https://fediscience.org/@andrew/109476263971894747">https://fediscience.org/@andrew/109476263971894747</a></p>
+<h3>Save slides to PDF</h3>
+<pre><code># Not done with code, see Notes</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf</a></p>
+<h3>Send data from R to Observable Javascript</h3>
+<pre><code># in R code chunk:
+ojs_define(data_for_ojs = mydata_in_r)
+# in ojs code chunk for a data frame:
+mydata_in_ojs = transpose(data_for_ojs)</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/interactive/ojs/data-sources.html#python-and-r">https://quarto.org/docs/interactive/ojs/data-sources.html#python-and-r</a></p>
+<h3>Arquero JS library: create Arquero table from existing JavaScript 2D object</h3>
+<pre><code>import {aq, op} from "@uwdata/arquero"
+myTable = aq.from(myData)</code></pre>
+<p class="source">Source: <a href="https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html">https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html</a></p>
+<h3>Special function to view an Arquero table</h3>
+<pre><code>myTable
+  .view()</code></pre>
+<p class="source">Source: <a href="https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html">https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html</a></p>
+<h3>Create an observable dropdown select input which will store a reactive value (based on user input) that can be passed onto a filtering function</h3>
+<pre><code>viewof myFilteringValue = Inputs.select(array_with_choices, { label: "Select WhatToSelect: ", value: "Default value if desired"
+})</code></pre>
+<h3>Create an observable text box with a reactive value that can be passed onto a filtering function</h3>
+<pre><code>viewof myFilteringValue = Inputs.text({label: "Search label", value: " "})</code></pre>
+<h3>Get a unique array of items from one column in an Arquero table to use as dropdown list choices</h3>
+<pre><code>dropdown_choices = myTable
+  .select('myColumn')                                      
+  .dedupe()                                                                 
+  .orderby('myColumn')
+  .array('myColumn')</code></pre>
+<p class="source">Source: <a href="https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html">https://www.infoworld.com/article/3678168/filter-javascript-objects-the-easy-way-with-arquero.html</a></p>
+<h3>Add "All" to the beginning of an array of Arquero dropdown choices</h3>
+<pre><code>dropdown_choices_with_All = op.concat("All", dropdown_choices)</code></pre>
+<h3>Filter an Arquero table to exactly match a viewof Inputs filter unless filter value is "All"</h3>
+<pre><code>filteredReportsTable = reportsTable
+  .params({ myFilter })
+  .filter((d) =>
+    myFilter !== "All" ? d.Source === myFilter : true)</code></pre>
+<h3>Filter an Arquero Table by a viewof Inputs filter via regular expression, unless filter value is "All" </h3>
+<pre><code>filteredReportsTable = reportsTable
+  .params({ myFilter })
+  .filter((d) =>
+    myFilter !== "All" ? op.match(d.myColumn, myFilter) : true)</code></pre>
+<h3>Filter an Arquero table based on values of a multi-select Inputs.select  and have all values display if nothing is selected yet</h3>
+<pre><code>filteredReportsTable = reportsTable
+  .params({ sourceFilter})
+   .filter(aq.escape((d) => ( sourceFilter[0] !== "All" && sourceFilter.length !== 0)  ? sourceFilter.includes(d.myColumn) : true) )</code></pre>
+<p class="source">Source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes</a></p>
+<h3>Add favicon to Quarto doc on a Shiny server</h3>
+<pre><code>format: 
+  html:
+    include-in-header: header.html
+
+(when header.html text is <link rel="shortcut icon" href="https://fulldomain.com/www/favicon.ico" />" /> and favicon.ico file is in www directory under app directory)</code></pre>
+<p class="source">Source: <a href="https://fosstodon.org/@smach/109852607868646268">https://fosstodon.org/@smach/109852607868646268</a></p>
+<h3>Format text with strikethrough like  <strike></strike></h3>
+<pre><code>~~text to strike through~~</code></pre>
+<p class="source">Source: <a href="https://quarto.org/docs/authoring/markdown-basics.html">https://quarto.org/docs/authoring/markdown-basics.html</a></p>
