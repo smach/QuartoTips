@@ -1,3 +1,5 @@
+#### THIS APP IS EXPECTING A DUCKDB WITH THE DATA AT A LOCATION IN THE QUARTO_TIPS ENVIRONMENT VARIABLE. MAKE SURE THE CORRECT VALUE EXISTS! ####
+
 # Written with Gemini 2.5 Pro (much of the functionality) and Posit's Shiny Assistant (help getting the sample question cards to be halfway decent) along with some help from ChatGPT and Claude.
 
 

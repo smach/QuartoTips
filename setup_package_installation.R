@@ -11,13 +11,15 @@ if (!require("pak")) {
 pacman::p_load(
   shiny,
   ellmer,
-  stringr,   # Needed for string manipulation
+  stringr,   
   glue,
   dplyr,
-  bslib ,     # Using for page_navbar
+  duckdb,
+  bslib ,     
   reactable,  
-  markdown,  # Added for rendering Markdown content in details
-  htmltools
+  markdown,  
+  htmltools,
+  DBI
 )
 
 if(!require("shinychat")){
