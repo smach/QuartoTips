@@ -57,17 +57,7 @@ if (nchar(OPENAI_API_KEY) == 0) {
 # }
 
 
-# Connect to the Ragnar store
-store <- tryCatch({
-  # Check if the store file exists before attempting to connect
-  if (!file.exists(store_location)) {
-    stop(paste("Ragnar store file not found at:", store_location))
-  }
-  ragnar_store_connect(store_location, read_only = TRUE)
-}, error = function(e) {
-  warning("Failed to connect to Ragnar store at: ", store_location, "\nError: ", e$message, immediate. = TRUE)
-  NULL # Ensure store is NULL on failure
-})
+
 
 ## --- Ellmer Setup ----
 # Define the chat model with system prompt. Use another ellmer provider and model if you'd like, just make sure to set the API key.
@@ -361,6 +351,18 @@ server <- function(input, output, session) {
     }
   })
   
+  
+  # Connect to the Ragnar store - gemini recommends putting this inside the server to prevent clashing connections across sessions
+  store <- tryCatch({
+    # Check if the store file exists before attempting to connect
+    if (!file.exists(store_location)) {
+      stop(paste("Ragnar store file not found at:", store_location))
+    }
+    ragnar_store_connect(store_location, read_only = TRUE)
+  }, error = function(e) {
+    warning("Failed to connect to Ragnar store at: ", store_location, "\nError: ", e$message, immediate. = TRUE)
+    NULL # Ensure store is NULL on failure
+  })
   
   ## --- Chatbot Logic ----
   # Reactive values to store the last retrieved chunks data frame
