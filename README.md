@@ -2,7 +2,7 @@
 
 This app uses the [ragnar](https://tidyverse.github.io/ragnar/), [ellmer](https://ellmer.tidyverse.org/), and [shinychat](https://posit-dev.github.io/shinychat/) R packages to create an [R Shiny Web app](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) that lets a user ask natural language questions about Quarto tips I've collected over several years through attending presentations and conferences, reading blog posts, watching videos, and looking up questions online.
 
-It was technically written by me, but largely with the help of generative AI: mostly [Gemini Pro 2.5](https://gemini.google.com/app) and [Posit's Shiny Assistant](https://gallery.shinyapps.io/assistant/#), but also other LLMs including the Custom GTP [R and RStudio Tutor](https://chatgpt.com/g/g-iedyANQtM-r-and-r-studio-tutor) as well as [Claude](https://claude.ai/). The app itself uses OpenAI's 
+It was technically written by me, but largely with the help of generative AI: mostly [Gemini Pro 2.5](https://gemini.google.com/app) and [Posit's Shiny Assistant](https://gallery.shinyapps.io/assistant/#), but also other LLMs including the Custom GTP [R and RStudio Tutor](https://chatgpt.com/g/g-iedyANQtM-r-and-r-studio-tutor) as well as [Claude](https://claude.ai/). The app itself uses OpenAI's gpt-4o-mini LLM.
 
 I kept the tips in a spreadsheet so they were easier to search -- back in the days before LLMs let you ask and answer questions so easily from unstructured data! The app still has a tab that lets you see them all in the searchable table.
 
